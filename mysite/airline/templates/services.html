@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Services</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<title>Simple Website Design</title>-->
+    <!---Custom Css File!--->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/services.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="#">Swish<span>Airlines.</span></a>
+        </div>
+        <ul>
+          <li><a href="{% url 'homepage' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <!-- <div class="buttons">
+          <a href="#" class="login">Log in</a>
+          <a href="#" class="btn">Register</a>
+        </div> -->
+      </nav>
+    </div>
+    {% block content %}
+      <div class="content">
+        <header id="header">
+            <div id='main-title'>
+              <h2>   Our Services
+                <br>
+                <br>
+              <small>We believe in serving humanity</small></h2>
+            </div>
+          </header>
+          <div>
+            <div id='first' class='row row-left'>
+              <div class='title'>
+                <div class='bullet'><i class="fa fa-html5" aria-hidden="true"></i></div>
+                <div>
+                  
+                  <div class='top'>Flights</div>
+                  <div class='bottom'>Booking &amp; Cancellation</div>
+                </div>
+              </div>
+              <div class='info'>
+                We provide Airline Booking and Cancellation accross <b>{{dests}}</b> cities 
+                in India. Swish Airline is a domestic Airline to sumarise. Where you can easily book a flights with minimum
+                details provided. We also charge fair shares for every single route provided. 
+                You can enjoy flying with us with an average fare of <b>₹{{avgfare}}</b>
+                Our fares range from <b>₹{{minfare}}</b> to <b>₹{{maxfare}}</b>
+              </div>
+            </div>
+    
+            <div id='second' class='row row-right'>
+              <div class='title'>
+                <div class='bullet'><i class="fa fa-animated-cms" aria-hidden="true"></i></div>
+                <div>
+                  <div class='top'>Total Passangers</div>
+                  <div class='bottom'>Customer Satisfaction</div>
+                </div>
+              </div>
+              <div class='info'>
+                We believe that customer satisfaction and their feedback are something that really will help us grow.
+                Right now we have almost <b>{{passengers}}</b>
+                happy passengers. We feel that we provide satisfactory service to our flyers. 
+                that is what proves our tagline, "Fly towards your happiness".
+              </div>
+            </div>
+    
+            <div id='third' class='row row-left'>
+              <div class='title'>
+                <div class='bullet'><i class="fa fa-animated-mobile" aria-hidden="true"></i></div>
+                <div>
+                  <div class='top'>Total Flights</div>
+                  <div class='bottom'>Total successful take-offs</div>
+                </div>
+              </div>
+              <div class='info'>
+                With a good count of flight take-offs we believethat we are excelling in the aspects ofcomfortable,
+                affordable,safe and secure Airline Services. Right now we have successfully flown <b>{{flights}}</b> number of flights 
+                safely. We are really proud of the feedback that we receive about the journey
+                from our travellers but we will keep on finding ways to grow and serve people in more better ways.
+              </div>
+            </div>
+      </div>
+    {% endblock %}
+  </body>
+</html>

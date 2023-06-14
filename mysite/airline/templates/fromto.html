@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FromTo</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/fromto.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <a href="#">Swish<span>Airlines.</span></a>
+        </div>
+        <ul>
+          <li><a href="{% url 'homepage' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <!-- <div class="buttons">
+          <a href="#" class="login">Log in</a>
+          <a href="#" class="btn">Register</a>
+        </div> -->
+    </nav>
+
+    <div class="container">
+    
+        <div class="content">
+            <div class="form">
+                <form action = "flightslist/" class = "form" method = "POST">
+                <h2>Search Flights</h2>
+                
+                {% csrf_token %}
+                {% block content %}
+                <div class="fromTo">
+                    <div class="from">
+                        <label>From</label>
+                        <select id="cities" name="from" required>
+                            <option value="none" selected disabled hidden>Select an Option</option>
+
+                            {% for row in source %}
+                            <option value="{{row.source}}">{{row.source}}</option>
+                            {% endfor %}
+
+                        </select>
+                    </div>
+                    <div class="to">
+                        <label>To</label>
+                        <select id="cities" name = "to">
+                            <option value="none" selected disabled hidden>Select an Option</option>
+
+                            {% for row in dest %}
+                            <option value="{{row.dest}}">{{row.dest}}</option>
+                            {% endfor %}
+
+                        </select>
+                    </div>
+                    <div class="depDate">
+                        <label>Departure Date</label>
+                        <input type="date" placeholder="Date" name="departure_date"/>
+                    </div>
+                    <button class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                {% endblock %}
+            </div>
+        </form>
+        </div>
+
+    </div>
+</body>
+</html>

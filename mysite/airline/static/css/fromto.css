@@ -1,0 +1,157 @@
+@import url("https://api.fontshare.com/v2/css?f[]=general-sans@200,500,300,600,400,700&display=swap");
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'General Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #000000;
+}
+
+.container{
+    width: 100%;
+    height: 82vh;
+    background-image: url(back.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+nav{
+    width: 100%;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+  }
+  .logo a{
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+  }
+  span{
+    color:  hsl(183 81% 35%);
+  }
+  nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+  }
+  nav ul li a{
+    text-decoration: none;
+    transition: 0.5s;
+  }
+  nav ul li a:hover{
+    color:  hsl(183 81% 35%);
+  }
+
+a{
+    color: #ffffff;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin-top: -8%;
+}
+
+.fromTo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.fromTo > div{
+    width: 250px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fromTo > div > label{
+    font-size: 14px;
+}
+
+.fromTo > div > div{
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+select{
+    color: white;
+    outline: none;
+    padding: 10px 5px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+option{
+    background-color: black;
+    color: white;
+}
+
+.dates > .depDate{
+    width: 250px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.depDate > input{
+    border: none;
+    outline: none;
+    background-color: black;
+    color: #ffffff;
+    padding: 10px 15px;
+}
+
+.searchBtn{
+    margin-left: 20px;
+    height: min-content;
+    border: none;
+    outline: none;
+    background-color: hsl(183 81% 35%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 15px;
+    border: 2px solid hsl(183 81% 35%);
+    border-radius: 40px;
+    transition: all ease 0.5s;
+}
+
+.searchBtn:hover{
+    background-color: transparent;
+    border: 2px solid hsl(183 81% 35%);
+}

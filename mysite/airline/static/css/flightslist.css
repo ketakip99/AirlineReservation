@@ -1,0 +1,206 @@
+@import url("https://api.fontshare.com/v2/css?f[]=general-sans@200,500,300,600,400,700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'General Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #000000;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: url(back.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-top: 35px;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+nav{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo a{
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+  }
+  span{
+    color:  hsl(183 81% 35%);
+  }
+  nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+  }
+  nav ul li a{
+    text-decoration: none;
+    transition: 0.5s;
+  }
+  nav ul li a:hover{
+    color:  hsl(183 81% 35%);
+  }
+
+a{
+    color: #ffffff;
+}
+
+.content{
+    margin-top: 10%;
+    color: #ffffff;
+}
+
+.details{
+    display: flex;
+    gap: 20px;
+}
+
+.fromTo{
+    display: flex;
+    gap: 10px;
+}
+
+.fromTo > div{
+    width: 200px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fromTo > div > label{
+    font-size: 12px;
+}
+
+.fromTo > div > div{
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.departureDate{
+    width: 200px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.departureDate > label{
+    font-size: 12px;
+}
+
+.departureDate > div{
+    font-weight: 600;
+    letter-spacing: normal;
+}
+
+
+.flights{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.flightCard{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    border: 1px solid hsl(183 81% 35%);
+    border-radius: 15px;
+    transition: all ease 0.5s;
+}
+
+.flightCard:hover{
+    background-color: hsl(183, 96%, 9%);
+    border: 1px solid hsl(183, 96%, 9%);
+}
+
+.fDetails{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.duration{
+    width: 20%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.line{
+    top: 50%;
+    width: 100%;
+    content: '';
+    transform: translateY(-50%);
+    border-top: 1px dashed #999999;
+}
+
+.dur{
+    width: 100%;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.line2{
+    top: 50%;
+    width: 100%;
+    content: '';
+    transform: translateY(-50%);
+    border-top: 1px dashed #999999;
+    margin-right: 2px;
+}
+
+.depTime, .arvTime{
+    font-size: 20px;
+}
+
+.fBooking{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.price{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.flightBtn{
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    transition: all ease 0.3s;
+}
+
+.flightBtn:hover{
+    background-color: transparent;
+    color: #ffffff;
+}

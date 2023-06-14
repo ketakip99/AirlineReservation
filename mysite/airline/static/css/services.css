@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Karla', sans-serif;
+}
+body{
+    background-color: #000;
+  color:  hsl(183 81% 35%);
+}
+h2{
+    color: #fff;
+}
+.container{
+  width: 100%;
+  height: 15vh;
+  background-image: url(back.jpg);
+  background-position: center;
+  background-size: cover;
+  padding-top: 35px;
+  padding-left: 8%;
+  padding-right: 8%;
+  
+}
+nav{
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo a{
+  font-size: 40px;
+  text-decoration: none;
+}
+span{
+  color:  hsl(183 81% 35%);
+}
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 10px 15px;
+}
+nav ul li a{
+  text-decoration: none;
+  transition: 0.5s;
+}
+nav ul li a:hover{
+  color:  hsl(183 81% 35%);
+}
+.login{
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 18px;
+}
+.btn{
+  background: #000;
+  border-radius: 6px;
+  padding: 9px 25px;
+  text-decoration: none;
+  transition: 0.5s;
+  font-size: 18px;
+}
+
+/* .content{
+  margin-top: 10%;
+  max-width: 600px;
+}
+.content h2{
+  font-size: 60px
+}
+.content p{
+  margin-top: 10px;
+  line-height: 25px;
+} */
+a{
+  color: #fff;
+}
+
+.content{
+    width: 100%;
+    height: 100vh;
+    background-image: url(back.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-top: 35px;
+    /* padding-left: 8%;
+    padding-right: 8%; */
+    align-items: center;
+  }
+  #content {
+    min-height: 100vh;
+    font-size: 3vh;
+    color: white;
+  }
+  #header {
+    clear: both;
+    overflow: hidden;
+    padding: 3vh;
+  }
+  #main-title {
+    float: left;
+    font-size: 3.5vh;
+    font-family: 'Karla', sans-serif;
+    font-color: white;
+  }
+  #main-title h2 {
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+  }
+  #main-title small {
+    padding-left: 0.5em;
+    font-weight: 300;
+  }
+  .top {
+    font-weight: 800;
+    border-bottom: solid 1px white;
+    padding-bottom: 0.7vh;
+    margin-bottom: 0.7vh;
+    font-family: 'Karla', sans-serif;
+  }
+  .bottom {
+    font-weight: 300;
+    clear: both;
+    font-family: 'Karla', sans-serif;
+  }
+  
+  #legend {
+    float: right;
+    color: white;
+  }
+  
+  .row {
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  .row .top {
+    border-color: #fff;
+    font-size: 3.5vh;
+  }
+  .row .bottom {
+    font-size: 3vh;
+  }
+  .bullet {
+    background-color: white;
+    border-radius: 100%;
+    height: 15vh;
+    width: 15vh;
+    text-align: center;
+    font-size: 7vh;
+    line-height: 15vh;
+  }
+  .title {
+    border-radius: 14vh;
+    padding: 3.5vh 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20vh;
+    flex-basis: 60%;
+  }
+  .info {
+    margin: 0 4vh;
+    padding: 0 4vh;
+  }
+  
+  .row-left {
+    margin-left: 12vh;
+    border-top-left-radius: 12vh;
+    border-bottom-left-radius: 12vh;
+  }
+  .row-right {
+    margin-right: 12vh;
+    border-top-right-radius: 12vh;
+    border-bottom-right-radius: 12vh;
+  }
+  .row-left .info {
+    border-left: solid 1px #fff;
+    font-size: 2vh;
+  }
+  .row-right .info {
+    border-right: solid 1px #fff;
+    font-size: 2vh;
+  }
+  .row-right .title {
+    order: 2;
+  }
+  
+  #first {
+    background-color: #007474;
+  }
+  #first .bullet {
+    color: #00b2a9;
+  }
+  #first .title {
+    background-color: #00b2a9;
+  }
+  
+  #second {
+    background-color:#008B8B;
+  }
+  #second .bullet {
+    color: #00b2a9;
+  }
+  #second .title {
+    background-color: #00b2a9;
+  }
+  
+  #third {
+    background-color: #007474;
+  }
+  #third .bullet {
+    color: #00b2a9;
+  }
+  #third .title {
+    background-color: #00b2a9;
+  }
+  
+  
+  .fa-animated-cms::before {
+    content: "\f19a";
+    animation: changeCMSIcon 6s linear infinite;
+  }
+  .fa-animated-mobile::before {
+    content: "\f10b";
+    animation: changeMobileIcon 8s linear infinite;
+  }
+  .fa-animated-seo::before {
+    content: "\f002";
+    animation: changeSEOIcon 6s linear infinite;
+  }
+  /* it works only in chrome :( */
+  @keyframes changeCMSIcon {
+    0% {
+      content: "\f19a";
+    }
+    33% {
+      content: "\f1a9";
+    }
+    66% {
+      content: "\f1aa";
+    }
+  }
+  
+  /* it works only in chrome :( */
+  @keyframes changeMobileIcon {
+    0% {
+      content: "\f10b";
+    }
+    25% {
+      content: "\f17b";
+    }
+    50% {
+      content: "\f179";
+    }
+    75% {
+      content: "\f17a";
+    }
+  }
+  
+  /* it works only in chrome :( */
+  @keyframes changeSEOIcon {
+    0% {
+      content: "\f002";
+    }
+    33% {
+      content: "\f155";
+    }
+    66% {
+      content: "\f201";
+    }
+  }
+  

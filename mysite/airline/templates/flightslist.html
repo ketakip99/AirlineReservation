@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/flightslist.css' %}">
+    <title>Flights</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+              <a href="#">Swish<span>Airlines.</span></a>
+            </div>
+            <ul>
+              <li><a href="{% url 'homepage' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About</a></li>
+              <li><a href="{% url 'services' %}">Services</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+            <!-- <div class="buttons">
+              <a href="#" class="login">Log in</a>
+              <a href="#" class="btn">Register</a>
+            </div> -->
+          </nav>
+
+        {% block content %}
+        <div class="content">
+            <div class="details">
+                <div class="fromTo">
+                    <div class="from">
+                        <label>From</label>
+                        <div class="fromText">{{src}}</div>
+                    </div>
+                    <div class="to">
+                        <label>To</label>
+                        <div class="toText">{{dest}}</div>
+                    </div>
+                </div>
+
+                <div class="departureDate">
+                    <label>Departure Date</label>
+                    <div class="depDateText">{{dept_date}}</div>
+                </div>
+            </div>
+
+            <div class="flights">
+
+                {% for row in data %}
+
+                <form action = "details/" class = "form" method="POST">
+                {% csrf_token %}
+                
+                <div class="flightCard">
+                    <div class="fDetails">
+                        <div class="depTime">{{row.departure_time}}</div>
+                        <div class="duration">
+                            <span class="line"></span>
+                            <span class="dur">{{time}} hrs</span>
+                            <span class="line2"></span>
+                            <span>✈</span>
+                        </div>
+                        <div class="arvTime">{{row.arrival_time}}</div>
+                    </div>
+
+                    <div class="fBooking">
+                        <div class="price">₹{{row.airfare}}</div>
+                        <input type = "hidden" name = "flightid" value = "{{row.id}}">
+                        <button class="flightBtn">Book Flight</button>
+                    </div>
+                </div>
+
+            </form>
+
+                {% endfor %}
+
+                <!-- <div class="flightCard">
+                    <div class="fDetails">
+                        <div class="depTime">05:50</div>
+                        <div class="duration">
+                            <span class="line"></span>
+                            <span class="dur">2h 45m</span>
+                            <span class="line2"></span>
+                            <span>✈</span>
+                        </div>
+                        <div class="arvTime">08:35</div>
+                    </div>
+
+                    <div class="fBooking">
+                        <div class="price">₹17,998</div>
+                        <button class="flightBtn">Book Flight</button>
+                    </div>
+                </div> -->
+
+                <!-- <div class="flightCard">
+                    <div class="fDetails">
+                        <div class="depTime">05:50</div>
+                        <div class="duration">
+                            <span class="line"></span>
+                            <span class="dur">2h 45m</span>
+                            <span class="line2"></span>
+                            <span>✈</span>
+                        </div>
+                        <div class="arvTime">08:35</div>
+                    </div>
+
+                    <div class="fBooking">
+                        <div class="price">₹17,998</div>
+                        <button class="flightBtn">Book Flight</button>
+                    </div>
+                </div>
+
+                <div class="flightCard">
+                    <div class="fDetails">
+                        <div class="depTime">05:50</div>
+                        <div class="duration">
+                            <span class="line"></span>
+                            <span class="dur">2h 45m</span>
+                            <span class="line2"></span>
+                            <span>✈</span>
+                        </div>
+                        <div class="arvTime">08:35</div>
+                    </div>
+
+                    <div class="fBooking">
+                        <div class="price">₹17,998</div>
+                        <button class="flightBtn">Book Flight</button>
+                    </div>
+                </div>
+
+                <div class="flightCard">
+                    <div class="fDetails">
+                        <div class="depTime">05:50</div>
+                        <div class="duration">
+                            <span class="line"></span>
+                            <span class="dur">2h 45m</span>
+                            <span class="line2"></span>
+                            <span>✈</span>
+                        </div>
+                        <div class="arvTime">08:35</div>
+                    </div>
+
+                    <div class="fBooking">
+                        <div class="price">₹17,998</div>
+                        <button class="flightBtn">Book Flight</button>
+                    </div>
+                </div>
+
+
+                <div class="flightCard">
+                    <div class="fDetails">
+                        <div class="depTime">05:50</div>
+                        <div class="duration">
+                            <span class="line"></span>
+                            <span class="dur">2h 45m</span>
+                            <span class="line2"></span>
+                            <span>✈</span>
+                        </div>
+                        <div class="arvTime">08:35</div>
+                    </div>
+
+                    <div class="fBooking">
+                        <div class="price">₹17,998</div>
+                        <button class="flightBtn">Book Flight</button>
+                    </div>
+                </div>
+
+
+
+                <div class="flightCard">
+                    <div class="fDetails">
+                        <div class="depTime">05:50</div>
+                        <div class="duration">
+                            <span class="line"></span>
+                            <span class="dur">2h 45m</span>
+                            <span class="line2"></span>
+                            <span>✈</span>
+                        </div>
+                        <div class="arvTime">08:35</div>
+                    </div>
+
+                    <div class="fBooking">
+                        <div class="price">₹17,998</div>
+                        <button class="flightBtn">Book Flight</button>
+                    </div>
+                </div>
+
+                <div class="flightCard">
+                    <div class="fDetails">
+                        <div class="depTime">05:50</div>
+                        <div class="duration">
+                            <span class="line"></span>
+                            <span class="dur">2h 45m</span>
+                            <span class="line2"></span>
+                            <span>✈</span>
+                        </div>
+                        <div class="arvTime">08:35</div>
+                    </div>
+
+                    <div class="fBooking">
+                        <div class="price">₹17,998</div>
+                        <button class="flightBtn">Book Flight</button>
+                    </div>
+                </div>
+
+                <div class="flightCard">
+                    <div class="fDetails">
+                        <div class="depTime">05:50</div>
+                        <div class="duration">
+                            <span class="line"></span>
+                            <span class="dur">2h 45m</span>
+                            <span class="line2"></span>
+                            <span>✈</span>
+                        </div>
+                        <div class="arvTime">08:35</div>
+                    </div>
+
+                    <div class="fBooking">
+                        <div class="price">₹17,998</div>
+                        <button class="flightBtn">Book Flight</button>
+                    </div>
+                </div> -->
+
+                <!-- <div class="flightCard">
+                    <div class="fDetails">
+                        <div class="depTime">05:50</div>
+                        <div class="duration">
+                            <span class="line"></span>
+                            <span class="dur">2h 45m</span>
+                            <span class="line2"></span>
+                            <span>✈</span>
+                        </div>
+                        <div class="arvTime">08:35</div>
+                    </div>
+
+                    <div class="fBooking">
+                        <div class="price">₹17,998</div>
+                        <button class="flightBtn">Book Flight</button>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+</body>
+</html>

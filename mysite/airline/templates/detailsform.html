@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/detailsform.css' %}">
+    <title>Passenger Details</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <a href="#">Swish<span>Airlines.</span></a>
+        </div>
+        <ul>
+          <li><a href="{% url 'homepage' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <!-- <div class="buttons">
+          <a href="#" class="login">Log in</a>
+          <a href="#" class="btn">Register</a>
+        </div> -->
+    </nav>
+
+    <div class="container">
+        <div class="content">
+            <form class="form" action="summary/" method="POST">
+                {% csrf_token %}
+                <h2>Passenger Details</h2>
+
+                <div>
+                    <label>Name</label>
+                    <input type="text" placeholder="Full Name" name = "fullName"/>
+                </div>
+
+                <div>
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Email Address" name="emailAddress"/>
+                </div>
+
+                <div class="pd">
+                    <div>
+                        <label>Phone Number</label>
+                        <input type="number" placeholder="Phone Number" name="PhNo"/>
+                    </div>
+                    <div>
+                        <label>Birth Date</label>
+                        <input type="date" placeholder="Birth Date" name="DOB"/>
+                    </div>
+                </div>
+
+                <div class="gender">
+                    <label>Gender</label>
+                    <div>
+                        <div class="genderOpt">
+                            <input type="radio" value="male" id="check-male" name="gender">
+                            <label for="check-male">Male</label>
+                        </div>
+                        <div class="genderOpt">
+                            <input type="radio" value="female" id="check-female" name="gender">
+                            <label for="check-female">Female</label>
+                        </div>
+                    </div>
+                </div>
+
+                <input type = "hidden" name = "flightid" value = "{{flightid}}">
+                <input type="submit" class="submitBtn"></input>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

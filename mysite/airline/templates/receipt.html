@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/receipt.css' %}">
+    <title>Receipt Summary</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <a href="#">Swish<span>Airlines.</span></a>
+        </div>
+        <ul>
+          <li><a href="{% url 'homepage' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <!-- <div class="buttons">
+          <a href="#" class="login">Log in</a>
+          <a href="#" class="btn">Register</a>
+        </div> -->
+    </nav>
+
+    <div class="container">
+        
+        <div class="content">
+          <div class="summary">
+            <h2>Receipt Summary</h2>
+
+            <div>
+                <div class="fDetails">
+                    <div>
+                        <label>Passenger ID</label>
+                        <div>{{passenger.id}}</div>
+                    </div>
+                    <div>
+                        <label>Flight ID</label>
+                        <div>{{flight.id}}</div>
+                    </div>
+                </div>
+    
+                <div class="passDetails">
+                    <div>
+                        <label>Passenger Name</label>
+                        <div>{{passenger.name}}</div>
+                    </div>
+                    <div class="age">
+                        <label>Age</label>
+                        <div>{{passenger.age}}</div>
+                    </div>
+                </div>
+    
+                <div class="details">
+                    <div class="fromTo">
+                        <div>
+                            <label>From </label>
+                            <div>{{flight.source}}</div>
+                        </div>
+                        <div>
+                            <label>To </label>
+                            <div>{{flight.dest}}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="date">
+                        <label>Date</label>
+                        <div>{{date_of_payment}}</div>
+                    </div>
+                </div>
+
+                <div class="time">
+                    <div>
+                        <div>
+                            <label>Departure Time</label>
+                            <div>{{flight.departure_time}}</div>
+                        </div>
+                        <div>
+                            <label>Arrival Time</label>
+                            <div>{{flight.arrival_time}}</div>
+                        </div>
+                    </div>
+
+                    <div class="dates">
+                        <div>
+                            <label>Departure Date</label>
+                            <div>{{flight.date_of_departure}}</div>
+                        </div>
+                        <div>
+                            <label>Arrival Date</label>
+                            <div>{{flight.date_of_arrival}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bill">
+                    <div class="pid">
+                        <label>Payment ID</label>
+                        <div>{{paymentid}}</div>
+                    </div>
+                    <div class="paid">
+                        <label>Total Amount Paid: </label>
+                        <div>₹{{flight.airfare}}</div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+    </div> 
+</body>
+</html>

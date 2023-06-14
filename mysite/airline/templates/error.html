@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Error</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<title>Simple Website Design</title>-->
+    <!---Custom Css File!--->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/error.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="#">Swish<span>Airlines.</span></a>
+        </div>
+        <ul>
+          <li><a href="{% url 'homepage' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <!-- <div class="buttons">
+          <a href="#" class="login">Log in</a>
+          <a href="#" class="btn">Register</a>
+        </div> -->
+      </nav>
+
+      
+      <div class="content">
+        <div class="noti">
+            <span><span>Technical Error Occured!</span> <i class="fa-solid fa-circle-check" id="c"></i></span>
+            <div class="errMsg">{{message}}</div>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

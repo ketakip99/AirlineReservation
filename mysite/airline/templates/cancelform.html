@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/cancelform.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Cancelation</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="#">Swish<span>Airlines.</span></a>
+        </div>
+        <ul>
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <!-- <div class="buttons">
+          <a href="#" class="login">Log in</a>
+          <a href="#" class="btn">Register</a>
+        </div> -->
+    </nav>
+
+    <form action="cancelnext/" method="POST">
+        {% csrf_token %}
+        <div class="container">
+
+
+            <div class="content">
+                <div class="form">
+                    <h2>Cancel Flight</h2>
+
+                    <div>
+                        <label>Passenger ID</label>
+                        <input type="number" placeholder="Passenger ID" name = "passid"/>
+                    </div>
+
+                    <div>
+                        <label>Flight ID</label>
+                        <input type="number" placeholder="Flight ID" name="flightid"/>
+                    </div>
+
+                    <div>
+                        <label>Payment ID</label>
+                        <input type="number" placeholder="Payment ID" name = "paymentid"/>
+                    </div>
+
+                    <button class="submitBtn" value="Confirm" onclick="cancelBtn()">Confirm</button>
+                </div>
+
+                <div class="noti">
+                    <span><span>Cancelled Flight</span> <i class="fa-solid fa-circle-check" id="c"></i></span>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+<script>
+    const noti = document.querySelector(".noti");
+
+    function cancelBtn() {
+        noti.classList.add("visible");
+    }
+</script>
+
+</html>

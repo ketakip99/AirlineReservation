@@ -1,0 +1,245 @@
+@import url("https://api.fontshare.com/v2/css?f[]=general-sans@200,500,300,600,400,700&display=swap");
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'General Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #000000;
+}
+
+.container{
+    width: 100%;
+    height: 82vh;
+    background-image: url(back.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+nav{
+    width: 100%;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+  }
+  .logo a{
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+  }
+  span{
+    color:  hsl(183 81% 35%);
+  }
+  nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+  }
+  nav ul li a{
+    text-decoration: none;
+    transition: 0.5s;
+  }
+  nav ul li a:hover{
+    color:  hsl(183 81% 35%);
+  }
+
+a{
+    color: #ffffff;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    padding: 3% 12%;
+    padding-top: 0%;
+    display: flex;
+}
+
+.payment{
+    width: 40%;
+    height: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 5% 2%;
+    padding-top: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #999999;
+    gap: 22px;
+}
+
+.payment > h2{
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.payment > div{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.payment > div > div{
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.option{
+    background: hsl(183, 96%, 9%);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 25px;
+    border: 2px solid hsl(183, 96%, 9%);
+    transition: all 0.3s ease;
+}
+
+.option .dot{
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+}
+
+.option .dot::before{
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background: hsl(183 81% 35%);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2{
+    border-color: hsl(183 81% 35%);
+    background: hsl(183 81% 35%);
+}
+
+#option-1:checked:checked ~ .option-1 .dot,
+#option-2:checked:checked ~ .option-2 .dot{
+    background: #fff;
+}
+
+#option-1:checked:checked ~ .option-1 .dot::before,
+#option-2:checked:checked ~ .option-2 .dot::before{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.option span{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 600;
+    color: #808080;
+}
+
+#option-1:checked:checked ~ .option-1 span,
+#option-2:checked:checked ~ .option-2 span{
+    color: #fff;
+}
+
+.payBtn{
+    align-self: flex-end;
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #ffffff;
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: auto;
+    transition: all ease 0.5s;
+}
+
+.payBtn:hover{
+    background-color: #000000;
+    border: 2px solid hsl(183 81% 35%);
+    color: white;
+}
+
+.content > .check{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(125, 100%, 42%);
+    visibility: hidden;
+}
+
+#c{
+    visibility: hidden;
+    opacity: 0;
+    clip-path: circle(0.5% at 50% 50%);
+    font-size: 100px;
+    transition: opacity ease 0.7s, clip-path ease 1s;
+}
+
+#c.visible{
+    visibility: visible;
+    opacity: 1;
+    clip-path: circle(50.4% at 50% 50%);
+}
+
+.check > div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.check > div > span{
+    font-size: 20px;
+    margin-top: 20px;
+    color: hsl(125, 100%, 42%);
+}
+
+.check > div > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+    color: #ffffff;
+}
+
+.check.visible{
+    visibility: visible;
+}

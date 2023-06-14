@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Contact</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<title>Simple Website Design</title>-->
+    <!---Custom Css File!--->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="#">Swish<span>Airlines.</span></a>
+        </div>
+        <ul>
+          <li><a href="{% url 'homepage' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <!-- <div class="buttons">
+          <a href="#" class="login">Log in</a>
+          <a href="#" class="btn">Register</a>
+        </div> -->
+      </nav>
+
+      
+      <div class="content">
+        <section>
+            
+            <div class="section-header">
+              <div class="container">
+                <h2>Contact Us</h2>
+                <p>Providing a helping hand for you to explore, fly and experience!</p>
+              </div>
+            </div>
+        
+            
+              <div class="container">
+                <div class="row">
+                  <div class="contact-info">
+                    <div class="contact-info-item">
+                      <div class="contact-info-icon">
+                        <i class="fas fa-home"></i>
+                      </div>
+        
+                      <div class="contact-info-content">
+                        <h4>Address</h4>
+                        <p>
+                          Swish Airlines ,<br />
+                          VimanNagar, Pune <br />411052
+                        </p>
+                      </div>
+                    </div>
+        
+                    <div class="contact-info-item">
+                      <div class="contact-info-icon">
+                        <i class="fas fa-phone"></i>
+                      </div>
+        
+                      <div class="contact-info-content">
+                        <h4>Phone</h4>
+                        <p>9856975630</p>
+                      </div>
+                    </div>
+        
+                    <div class="contact-info-item">
+                      <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                      </div>
+        
+                      <div class="contact-info-content">
+                        <h4>Email</h4>
+                        <p>swishairlines@gmail.com</p>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="contact-form">
+                    <h1>
+                      Swish Airlines at your service you can contact us using the means
+                      provided. Happy Flying!
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </section>
+        
+      </div>
+    </div>
+  </body>
+</html>
